@@ -1,11 +1,7 @@
-import React from "react";
+import React from 'react'
 
 const Filter = () => {
-    return (
-        <div className='avisales-filter'>
-
-        </div>
-    )
+  return <div className='avisales-filter'></div>
 }
 
 export default Filter
