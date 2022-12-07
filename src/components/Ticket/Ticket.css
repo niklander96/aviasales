@@ -1,0 +1,59 @@
+.ant-card .ant-card-bordered .ant-card-body {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    border: none;
+}
+
+:where(.css-dev-only-do-not-override-1ij74fp).ant-card-bordered {
+    border: none;
+    box-shadow: 1px 2px 3px 3px #E5E5E5;
+}
+
+.aviasales-ticket {
+    width: 502px;
+    height: 184px;
+    list-style: none;
+    border: none;
+}
+
+.table-head {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+}
+
+.table {
+    width: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.price {
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 24px;
+    display: flex;
+    align-items: center;
+    color: #2196F3;
+}
+
+.logo {
+    width: auto;
+    height: auto;
+}
+
+.grey {
+   color: #A0B0B9;
+}
+
+.cell {
+    color: #4A4A4A;
+    width: 141px;
+    height: 39px;
+    margin: 5px 10px;
+}

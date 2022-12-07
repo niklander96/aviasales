@@ -1,0 +1,39 @@
+.aviasales-search-ticket-buttons {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    border-radius: 5px;
+    font-family: "Open Sans";
+}
+
+.button {
+    cursor: pointer;
+    width: 168px;
+    height: 50px;
+    border: 1px solid #DFE5EC;
+    background: #FFFFFF;
+}
+.button:hover {
+    background: #2196F3;
+    color: #FFFFFF;
+}
+
+.fast {
+    border-right: none;
+    border-left: none;
+}
+
+.optimum {
+    border-bottom-right-radius: 8px;
+    border-top-right-radius: 8px;
+}
+
+.cheap {
+    border-bottom-left-radius: 8px;
+    border-top-left-radius: 8px;
+}
+
+.aviasales-ticket-list {
+    padding: 0;
+    margin: 0;
+}

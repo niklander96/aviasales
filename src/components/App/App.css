@@ -1,0 +1,21 @@
+.aviasales-app {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-self: center;
+    margin: auto;
+    width: 960px;
+    height: auto;
+    background: #F3F7FA;
+    font-family: 'Open Sans';
+}
+.logo-container {
+    position: relative;
+    margin: 50px auto;
+}
+
+.logotype {
+    width: 60px;
+    height: 60px;
+    background: url('src/img/Logo.svg');
+}
