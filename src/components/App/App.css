@@ -17,5 +17,5 @@
 .logotype {
     width: 60px;
     height: 60px;
-    background: url('src/img/Logo.svg');
+    background: url('src/components/App/Logo.svg');
 }
