@@ -8,11 +8,11 @@ import Logo from './Logo.svg'
 function App() {
   return (
     <div className='aviasales-app'>
-      <div className='logo-container'>
-        <img className='logotype' src={Logo} alt='' />
+      <img className='logotype' src={Logo} alt='' />
+      <div className='main'>
+        <Filter />
+        <TicketList />
       </div>
-      <Filter />
-      <TicketList />
     </div>
   )
 }

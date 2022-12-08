@@ -6,11 +6,7 @@
     width: 232px;
     height: 257px;
     padding: 0;
-    margin: 0;
     box-shadow: 1px 2px 3px 3px #E5E5E5;
-    position: absolute;
-    left: 102px;
-    top: 155px;
 }
 
 .inputs {
@@ -33,9 +29,31 @@
     line-height: 12px;
     margin: 20px auto 0 20px;
 }
-li {
-    margin: 20px auto;
+
+.input {
+    position: absolute;
+    -webkit-appearance: none;
+    -moz-appearance: none;
 }
 
+.inputs-item {
+    margin-bottom: 20px;
+}
 
+.checkbox {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-image: url("off.svg");
+    margin-left: -2em;
+    margin-bottom: 20px;
+}
 
+.check {
+    padding-left: 2em;
+}
+
+.input:checked + .checkbox {
+    background-image: url('on.svg');
+    background-position: center;
+}

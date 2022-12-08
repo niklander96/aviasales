@@ -5,8 +5,8 @@ import Ticket from '../Ticket'
 
 const TicketList = () => {
   return (
-    <div>
-      <div className='aviasales-search-ticket-buttons'>
+    <div className='search-ticket'>
+      <div className='search-ticket-buttons'>
         <button type='button' className='button cheap selected'>
           САМЫЙ ДЕШЕЫВЫЙ
         </button>
@@ -17,7 +17,7 @@ const TicketList = () => {
           ОПТИМАЛЬНЫЙ
         </button>
       </div>
-      <ul className='aviasales-ticket-list'>
+      <ul className='ticket-list'>
         <Ticket />
         <Ticket />
         <Ticket />

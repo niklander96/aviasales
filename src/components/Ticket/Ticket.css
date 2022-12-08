@@ -1,13 +1,17 @@
-.ant-card .ant-card-bordered .ant-card-body {
+.ant-card.ant-card-bordered.ant-card-body {
     box-sizing: border-box;
     display: flex;
     flex-direction: row;
     border: none;
     margin: 20px 0;
-}
 
+}
+:where(.css-dev-only-do-not-override-1ij74fp).ant-card .ant-card-body {
+    padding: 20px;
+}
 :where(.css-dev-only-do-not-override-1ij74fp).ant-card-bordered {
     border: none;
+    margin: 5px 0;
     box-shadow: 1px 2px 3px 3px #E5E5E5;
 }
 
@@ -16,7 +20,7 @@
     height: 184px;
     list-style: none;
     border: none;
-
+    margin-bottom: 25px;
 }
 
 .table-head {

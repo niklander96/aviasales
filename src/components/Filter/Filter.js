@@ -7,25 +7,37 @@ const Filter = () => {
       <div className='filters-head'>КОЛИЧЕСТВО ПЕРЕСАДОК</div>
       <form>
         <ul className='inputs'>
-          <li>
-            <input id='input-all' type='checkbox' />
-            <label htmlFor='input-all'>Все</label>
+          <li className='inputs-item'>
+            <label className='check'>
+              <input className='input all' type='checkbox' />
+              <span className='checkbox'></span>
+              Все
+            </label>
           </li>
-          <li>
-            <input id='input-0' type='checkbox' />
-            <label htmlFor='input-0'>Без пересадок</label>
+          <li className='inputs-item'>
+            <label className='check'>
+              <input className='input zero' type='checkbox' />
+              <span className='checkbox'></span>
+              Без пересадок
+            </label>
           </li>
-          <li>
-            <input id='input-1' type='checkbox' />
-            <label htmlFor='input-1'>1 пересадка</label>
+          <li className='inputs-item'>
+            <label className='check'>
+              <input className='input one' type='checkbox' />
+              <span className='checkbox'></span>1 пересадка
+            </label>
           </li>
-          <li>
-            <input id='input-2' type='checkbox' />
-            <label htmlFor='input-2'>2 пересадки</label>
+          <li className='inputs-item'>
+            <label className='check'>
+              <input className='input two' type='checkbox' />
+              <span className='checkbox'></span>2 пересадки
+            </label>
           </li>
-          <li>
-            <input id='input-3' type='checkbox' />
-            <label htmlFor='input-3'>3 пересадки</label>
+          <li className='inputs-item'>
+            <label className='check'>
+              <input className='input three' type='checkbox' />
+              <span className='checkbox'></span>3 пересадки
+            </label>
           </li>
         </ul>
       </form>
