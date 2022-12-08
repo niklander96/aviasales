@@ -19,7 +19,15 @@ const TicketList = () => {
       </div>
       <ul className='aviasales-ticket-list'>
         <Ticket />
+        <Ticket />
+        <Ticket />
+        <Ticket />
       </ul>
+      <div>
+        <button type='button' className=' button show-more'>
+          ПОКАЗАТЬ ЕЩЕ 5 БИЛЕТОВ!
+        </button>
+      </div>
     </div>
   )
 }

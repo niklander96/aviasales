@@ -1,9 +1,9 @@
 .aviasales-search-ticket-buttons {
     box-sizing: border-box;
     padding: 0;
-    margin: 0;
     border-radius: 5px;
-    font-family: "Open Sans";
+    margin: 155px 102px 25px 21px;
+
 }
 
 .button {
@@ -12,6 +12,11 @@
     height: 50px;
     border: 1px solid #DFE5EC;
     background: #FFFFFF;
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 20px;
 }
 .button:hover {
     background: #2196F3;
@@ -35,5 +40,21 @@
 
 .aviasales-ticket-list {
     padding: 0;
-    margin: 0;
+    margin: 0 102px 20px 21px;
+
+}
+
+.show-more {
+    border-radius: 8px;
+    padding: 0;
+    width: 504px;
+    height: 50px;
+    margin-left: 21px;
+    color: #FFFFFF;
+    background: #2196F3;
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 20px;
 }

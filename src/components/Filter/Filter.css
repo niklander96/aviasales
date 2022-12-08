@@ -1,21 +1,41 @@
 .avisales-filter {
+    box-sizing: border-box;
     background: #FFFFFF;
     border: 0;
     border-radius: 5px;
     width: 232px;
-    height: 252px;
+    height: 257px;
     padding: 0;
     margin: 0;
     box-shadow: 1px 2px 3px 3px #E5E5E5;
     position: absolute;
-    left: 103px;
-    top: 160px;
+    left: 102px;
+    top: 155px;
 }
 
 .inputs {
     box-sizing: border-box;
     list-style: none;
     padding: 0;
-    margin: 0;
+    margin: 20px ;
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 20px;
 }
+
+.filters-head {
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 12px;
+    margin: 20px auto 0 20px;
+}
+li {
+    margin: 20px auto;
+}
+
+
 

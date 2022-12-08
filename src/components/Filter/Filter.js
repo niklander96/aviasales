@@ -4,7 +4,7 @@ import './Filter.css'
 const Filter = () => {
   return (
     <div className='avisales-filter'>
-      <span>КОЛИЧЕСТВО ПЕРЕСАДОК</span>
+      <div className='filters-head'>КОЛИЧЕСТВО ПЕРЕСАДОК</div>
       <form>
         <ul className='inputs'>
           <li>

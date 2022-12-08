@@ -7,7 +7,7 @@ const Ticket = () => {
     <li className='aviasales-ticket'>
       <Card>
         <div className='table-head'>
-          <h1 className='price'>13400 Р</h1>
+          <h1 className='price'>13 400 Р</h1>
           <img className='logo' src='' alt='logo' />
         </div>
         <div className='table'>

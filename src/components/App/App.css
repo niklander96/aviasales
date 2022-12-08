@@ -1,3 +1,5 @@
+
+
 .aviasales-app {
     position: relative;
     display: flex;
@@ -17,5 +19,4 @@
 .logotype {
     width: 60px;
     height: 60px;
-    background: url('src/components/App/Logo.svg');
 }
