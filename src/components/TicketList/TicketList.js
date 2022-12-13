@@ -14,7 +14,6 @@ const TicketList = () => {
 
   const getSearchId = () => {
     dispatch(fetchSearchId).then((id) => {
-      console.log(id)
       localStorage.setItem('searchId', id)
     })
   }
@@ -53,7 +52,7 @@ const TicketList = () => {
         })}
       </ul>
       <div>
-        <button type='button' className=' button show-more' onChange={() => getTicket}>
+        <button type='button' className=' button show-more'>
           ПОКАЗАТЬ ЕЩЕ 5 БИЛЕТОВ!
         </button>
       </div>
