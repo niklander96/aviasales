@@ -1,9 +1,31 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import './TicketList.css'
+import { useDispatch, useSelector } from 'react-redux'
+import { v4 as uuidv4 } from 'uuid'
 
 import Ticket from '../Ticket'
+import { fetchSearchId, fetchTickets } from '../../services/TicketService'
 
 const TicketList = () => {
+  const id = localStorage.getItem('searchId')
+  const dispatch = useDispatch()
+  const tickets = useSelector((state) => state.tickets.tickets)
+  const getTicket = dispatch(fetchTickets(id))
+
+  const getSearchId = () => {
+    dispatch(fetchSearchId).then((id) => {
+      console.log(id)
+      localStorage.setItem('searchId', id)
+    })
+  }
+
+  // const getTickets = () => {
+  //   dispatch()
+  // }
+  useEffect(() => {
+    !id && getSearchId()
+    dispatch(fetchTickets(id))
+  }, [])
   return (
     <div className='search-ticket'>
       <div className='search-ticket-buttons'>
@@ -18,13 +40,20 @@ const TicketList = () => {
         </button>
       </div>
       <ul className='ticket-list'>
-        <Ticket />
-        <Ticket />
-        <Ticket />
-        <Ticket />
+        {tickets.map((ticket) => {
+          ticket.tickets.map((item) => {
+            console.log(item)
+            return item
+          })
+          return (
+            <div className='ticket' key={uuidv4()}>
+              <Ticket />
+            </div>
+          )
+        })}
       </ul>
       <div>
-        <button type='button' className=' button show-more'>
+        <button type='button' className=' button show-more' onChange={() => getTicket}>
           ПОКАЗАТЬ ЕЩЕ 5 БИЛЕТОВ!
         </button>
       </div>
