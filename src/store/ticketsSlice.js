@@ -8,8 +8,8 @@ const ticketsSlice = createSlice({
     stop: false,
   },
   reducers: {
-    addTickets(state, action) {
-      state.tickets.push(action.payload)
+    getAllTickets(state, action) {
+      state.tickets.push(...action.payload)
     },
     onStop(state, action) {
       state.stop = !action.payload
@@ -18,5 +18,5 @@ const ticketsSlice = createSlice({
 })
 
 export default ticketsSlice.reducer
-export const { addTickets } = ticketsSlice.actions
+export const { getAllTickets } = ticketsSlice.actions
 export const { onStop } = ticketsSlice.actions

@@ -1,4 +1,5 @@
-import { addTickets, onStop } from '../store/ticketsSlice'
+
+import { getAllTickets } from '../store/ticketsSlice'
 
 const apiBase = 'https://aviasales-test-api.kata.academy/'
 export async function fetchSearchId() {
@@ -10,11 +11,11 @@ export async function fetchSearchId() {
 }
 
 export function fetchTickets(searchId) {
-  return function (dispatch) {
+  return async function (dispatch) {
     let newUrl = new URL('tickets', apiBase)
     newUrl.searchParams.set('searchId', searchId)
-    fetch(newUrl)
-      .then((res) => res.json())
-      .then((json) => dispatch(addTickets(json)))
+    const req = await fetch(newUrl)
+    const { tickets, stop } = await req.json()
+    return dispatch(getAllTickets(tickets))
   }
 }

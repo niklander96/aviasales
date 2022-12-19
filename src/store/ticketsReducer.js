@@ -1,16 +1,27 @@
-import { createReducer, createAction } from '@reduxjs/toolkit'
-
 const initialState = {
-  count: 0,
+  loading: true,
   tickets: [],
 }
+export const GET_FIRST_TICKETS = 'GET_FIRST_TICKETS'
+export const GET_ALL_TICKETS = 'GET_ALL_TICKETS'
 
-export const addTickets = createAction('ADD_TICKETS')
+export const ticketsReducer = (state = initialState, action) => {
+  switch (action.type) {
+    case GET_FIRST_TICKETS:
+      return {
+        ...state,
+        tickets: action.payload,
+      }
 
-export default createReducer(initialState, {
-  [addTickets]: function (state) {
-    state.tickets.push(action.payload)
-  },
-})
+    case GET_ALL_TICKETS:
+      return {
+        tickets: [...state.tickets, ...action.payload],
+        loading: false,
+      }
 
-console.log(addTickets)
+    default:
+      return state
+  }
+}
+
+
