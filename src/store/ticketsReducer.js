@@ -15,7 +15,7 @@ export const ticketsReducer = (state = initialState, action) => {
 
     case GET_ALL_TICKETS:
       return {
-        tickets: [...state.tickets, ...action.payload],
+        tickets: state.tickets.push(action.payload),
         loading: false,
       }
 
@@ -24,4 +24,5 @@ export const ticketsReducer = (state = initialState, action) => {
   }
 }
 
-
+export const getFirstTickets = (payload) => ({ type: GET_FIRST_TICKETS, payload })
+export const getAllTickets = (payload) => ({ type: GET_ALL_TICKETS, payload })

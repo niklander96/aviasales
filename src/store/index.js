@@ -1,11 +1,14 @@
-import { configureStore, combineReducers } from '@reduxjs/toolkit'
+import { applyMiddleware, combineReducers, legacy_createStore as createStore, compose } from '@reduxjs/toolkit'
+import thunk from 'redux-thunk'
 
-import ticketsSlice from './ticketsSlice'
+import { ticketsReducer } from './ticketsReducer'
+import sortTicketsReducer from './sortTicketsReducer'
+import filterTicketsReducer from './filterTicketsReducer'
 
 const rootReducer = combineReducers({
-  tickets: ticketsSlice,
+  tickets: ticketsReducer,
+  sort: sortTicketsReducer,
+  filterStops: filterTicketsReducer,
 })
 
-export const store = configureStore({
-  reducer: rootReducer,
-})
+export const store = createStore(rootReducer, compose(applyMiddleware(thunk)))

@@ -60,3 +60,8 @@
     font-size: 12px;
     line-height: 20px;
 }
+
+.selected {
+    background: #2196F3;
+    color: #FFFFFF;
+}

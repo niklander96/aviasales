@@ -1,12 +1,12 @@
-
-import { getAllTickets } from '../store/ticketsSlice'
+// eslint-disable-next-line import/named
+import { getAllTickets, getFirstTickets } from '../store/ticketsReducer'
+// import { getAllTickets } from '../store/ticketsSlice'
 
 const apiBase = 'https://aviasales-test-api.kata.academy/'
 export async function fetchSearchId() {
   let newUrl = new URL('search', apiBase)
   const req = await fetch(newUrl)
   const res = await req.json()
-  console.log(res.searchId)
   return res.searchId
 }
 
@@ -16,6 +16,6 @@ export function fetchTickets(searchId) {
     newUrl.searchParams.set('searchId', searchId)
     const req = await fetch(newUrl)
     const { tickets, stop } = await req.json()
-    return dispatch(getAllTickets(tickets))
+    return dispatch(getFirstTickets(tickets))
   }
 }
