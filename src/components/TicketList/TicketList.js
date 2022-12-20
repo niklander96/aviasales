@@ -53,7 +53,7 @@ const TicketList = () => {
       <div className='search-ticket-buttons'>
         <button
           type='button'
-          className={classnames('button', activeButtons === 'cheap' && 'selected')}
+          className={classnames('button', 'cheap', activeButtons === 'cheap' && 'selected')}
           onClick={() => {
             setActiveButtons('cheap')
             dispatch(sortCheap())
@@ -63,7 +63,7 @@ const TicketList = () => {
         </button>
         <button
           type='button'
-          className={classnames('button', activeButtons === 'fast' && 'selected')}
+          className={classnames('button', 'fast', activeButtons === 'fast' && 'selected')}
           onClick={() => {
             setActiveButtons('fast')
             dispatch(sortFast())
@@ -73,7 +73,7 @@ const TicketList = () => {
         </button>
         <button
           type='button'
-          className={classnames('button', activeButtons === 'optimum' && 'selected')}
+          className={classnames('button', 'optimum', activeButtons === 'optimum' && 'selected')}
           onClick={() => {
             setActiveButtons('optimum')
             dispatch(sortOptimum())
