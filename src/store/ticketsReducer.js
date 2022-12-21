@@ -15,7 +15,7 @@ export const ticketsReducer = (state = initialState, action) => {
 
     case GET_ALL_TICKETS:
       return {
-        tickets: state.tickets.push(action.payload),
+        tickets: [...state.tickets, ...action.payload],
         loading: false,
       }
 

@@ -22,7 +22,7 @@ function sortTicketsReducer(state = initialState, action) {
   }
 }
 
-export const sortCheap = () => ({ type: SORT_CHEAP })
-export const sortFast = () => ({ type: SORT_FAST })
-export const sortOptimum = () => ({ type: SORT_OPTIMUM })
+export const sortCheap = (payload) => ({ type: SORT_CHEAP, payload })
+export const sortFast = (payload) => ({ type: SORT_FAST, payload })
+export const sortOptimum = (payload) => ({ type: SORT_OPTIMUM, payload })
 export default sortTicketsReducer

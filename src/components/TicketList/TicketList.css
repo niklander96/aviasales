@@ -43,6 +43,9 @@
 .ticket-list {
     padding: 0;
     margin: 0 0 20px 21px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 
 }
 
@@ -69,4 +72,9 @@
 .selected {
     background: #2196F3;
     color: #FFFFFF;
+}
+
+.antd-spin-dot {
+    display: flex;
+    align-self: center;
 }

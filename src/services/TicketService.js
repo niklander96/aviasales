@@ -1,21 +1,35 @@
-// eslint-disable-next-line import/named
 import { getAllTickets, getFirstTickets } from '../store/ticketsReducer'
-// import { getAllTickets } from '../store/ticketsSlice'
 
 const apiBase = 'https://aviasales-test-api.kata.academy/'
-export async function fetchSearchId() {
-  let newUrl = new URL('search', apiBase)
-  const req = await fetch(newUrl)
-  const res = await req.json()
-  return res.searchId
-}
 
-export function fetchTickets(searchId) {
+export function fetchTickets() {
   return async function (dispatch) {
-    let newUrl = new URL('tickets', apiBase)
-    newUrl.searchParams.set('searchId', searchId)
-    const req = await fetch(newUrl)
-    const { tickets, stop } = await req.json()
-    return dispatch(getFirstTickets(tickets))
+    const allTickets = []
+
+    let newUrlId = new URL('search', apiBase)
+    const resId = await fetch(newUrlId)
+    const { searchId } = await resId.json()
+
+    let newUrlTickets = new URL('tickets', apiBase)
+    newUrlTickets.searchParams.set('searchId', searchId)
+    let firstPackOfTickets = false
+    let notLastPackOfTickets = true
+
+    while (notLastPackOfTickets) {
+      const ticketsRes = await fetch(newUrlTickets)
+
+      if (ticketsRes.status !== 200) continue
+
+      const { tickets, stop } = await ticketsRes.json()
+
+      if (!firstPackOfTickets) {
+        firstPackOfTickets = true
+        dispatch(getFirstTickets(tickets))
+      }
+
+      allTickets.push(...tickets)
+      if (stop) notLastPackOfTickets = false
+    }
+    return dispatch(getAllTickets(allTickets))
   }
 }
