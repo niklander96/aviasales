@@ -21,7 +21,7 @@ const Filter = () => {
                 checked={filters.allChecked}
                 onChange={() => dispatch(filterChange('allChecked'))}
               />
-              <span className='checkbox'></span>
+              <span className='checkbox' />
               Все
             </label>
           </li>
@@ -33,7 +33,7 @@ const Filter = () => {
                 checked={filters.noChecked}
                 onChange={() => dispatch(filterChange('noChecked'))}
               />
-              <span className='checkbox'></span>
+              <span className='checkbox' />
               Без пересадок
             </label>
           </li>
@@ -45,7 +45,7 @@ const Filter = () => {
                 checked={filters.oneChecked}
                 onChange={() => dispatch(filterChange('oneChecked'))}
               />
-              <span className='checkbox'></span>1 пересадка
+              <span className='checkbox' />1 пересадка
             </label>
           </li>
           <li className='inputs-item'>
@@ -56,7 +56,7 @@ const Filter = () => {
                 checked={filters.twoChecked}
                 onChange={() => dispatch(filterChange('twoChecked'))}
               />
-              <span className='checkbox'></span>2 пересадки
+              <span className='checkbox' />2 пересадки
             </label>
           </li>
           <li className='inputs-item'>
@@ -67,7 +67,7 @@ const Filter = () => {
                 checked={filters.threeChecked}
                 onChange={() => dispatch(filterChange('threeChecked'))}
               />
-              <span className='checkbox'></span>3 пересадки
+              <span className='checkbox' />3 пересадки
             </label>
           </li>
         </ul>

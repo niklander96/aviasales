@@ -5,9 +5,11 @@ import { v4 as uuidv4 } from 'uuid'
 import classnames from 'classnames'
 import { Spin } from 'antd'
 
+import sortingTickets from '../../functions/sortedFunction'
 import { sortCheap, sortFast, sortOptimum } from '../../store/sortTicketsReducer'
 import Ticket from '../Ticket'
 import { fetchTickets } from '../../services/TicketService'
+import filtering from '../../functions/filteredFunction'
 
 const TicketList = () => {
   const dispatch = useDispatch()
@@ -15,42 +17,19 @@ const TicketList = () => {
   const loading = useSelector((state) => state.tickets.loading)
   const { allChecked, noChecked, oneChecked, twoChecked, threeChecked } = useSelector((state) => state.filterStops)
   const sorts = useSelector((state) => state.sort)
-  const [activeButtons, setActiveButtons] = useState()
+  const [activeButtons, setActiveButtons] = useState('cheap')
 
   const [ticketNum, setTicketNum] = useState(5)
-  const packTickets = allTickets.slice(0, ticketNum)
 
-  const sortTickets = (tickets, sort) => {
-    allTickets.sort((a, b) => {
-      if (sort === 'cheap') return a.price - b.price
-      if (sort === 'fast') {
-        return a.segments[0].duration + a.segments[1].duration - (b.segments[0].duration + b.segments[1].duration)
-      }
-      return (
-        a.price -
-        b.price +
-        (a.segments[0].duration + a.segments[1].duration) -
-        (b.segments[0].duration + b.segments[1].duration)
-      )
-    })
-  }
+  const sortedTickets = useMemo(() => sortingTickets(allTickets, sorts), [sorts, allTickets])
 
-  const filterTickets = {
-    sortTickets,
-    allChecked,
-    noChecked,
-    oneChecked,
-    twoChecked,
-    threeChecked,
-  }
-
-  useMemo(() => sortTickets(allTickets, sorts), [allTickets, sorts])
+  const filterAndSortTickets = filtering(sortedTickets, allChecked, noChecked, oneChecked, twoChecked, threeChecked)
+  const packTickets = filterAndSortTickets.slice(0, ticketNum)
 
   useEffect(() => {
     dispatch(fetchTickets())
   }, [])
 
-  console.log(allTickets)
   return (
     <div className='search-ticket'>
       <div className='search-ticket-buttons'>
@@ -87,7 +66,7 @@ const TicketList = () => {
       </div>
       <ul className='ticket-list'>
         {loading && <Spin size='large' />}
-        {!loading && filterTickets.length === 0 ? (
+        {!loading && filterAndSortTickets.length === 0 ? (
           <h2>Билетов не найдено</h2>
         ) : (
           packTickets.map((item) => (
@@ -96,13 +75,13 @@ const TicketList = () => {
               item={item}
               price={item.price}
               idImg={item.carrier}
-              forward={item.segments[0]}
-              backward={item.segments[1]}
+              before={item.segments[0]}
+              after={item.segments[1]}
             />
           ))
         )}
       </ul>
-      {!loading && filterTickets.length !== 0 && (
+      {!loading && filterAndSortTickets.length !== 0 && (
         <button
           type='button'
           className='button show-more'
