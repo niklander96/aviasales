@@ -1,5 +1,5 @@
 import React from 'react'
-import './Filter.css'
+import './Filter.scss'
 import { useDispatch, useSelector } from 'react-redux'
 
 import { filterChange } from '../../store/filterTicketsReducer'
@@ -9,7 +9,7 @@ const Filter = () => {
   const filters = useSelector((state) => state.filterStops)
 
   return (
-    <div className='avisales-filter'>
+    <div className='aviaSales-filter'>
       <div className='filters-head'>КОЛИЧЕСТВО ПЕРЕСАДОК</div>
       <form>
         <ul className='inputs'>

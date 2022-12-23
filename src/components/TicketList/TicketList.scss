@@ -1,0 +1,133 @@
+.search-ticket {
+  box-sizing: border-box;
+  padding: 0;
+  border-radius: 5px;
+
+  .search-ticket-buttons {
+    margin: 0 0 10px 21px;
+
+    .button {
+      cursor: url("../img/Cursor.svg"), auto;
+      width: 168px;
+      height: 50px;
+      border: 1px solid #DFE5EC;
+      background: #FFFFFF;
+      font-style: normal;
+      font-weight: 400;
+      font-size: 12px;
+      line-height: 20px;
+    }
+
+    .button:hover {
+      background: #2196F3;
+      color: #FFFFFF;
+    }
+
+    .fast {
+      border-right: none;
+      border-left: none;
+    }
+
+    .optimum {
+      border-bottom-right-radius: 8px;
+      border-top-right-radius: 8px;
+    }
+
+    .cheap {
+      border-bottom-left-radius: 8px;
+      border-top-left-radius: 8px;
+    }
+
+    .selected {
+      background: #2196F3;
+      color: #FFFFFF;
+    }
+  }
+
+  .ticket-list {
+    padding: 0;
+    margin: 0 0 20px 21px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+  }
+
+  .show-more {
+    cursor: url("../img/Cursor.svg"), auto;
+    border-radius: 8px;
+    width: 100%;
+    max-width: 504px;
+    height: 50px;
+    margin-left: 21px;
+    margin-bottom: 50px;
+    color: #FFFFFF;
+    background: #2196F3;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 20px;
+  }
+
+  .show-more:hover {
+    opacity: 0.6;
+  }
+
+  .antd-spin-dot {
+    display: flex;
+    align-self: center;
+  }
+}
+
+@media (max-width: 800px) {
+  .search-ticket {
+    width: 100%;
+    min-width: 350px;
+    .search-ticket-buttons {
+      display: flex;
+      flex-direction: column;
+      align-content: center;
+      margin-right: 21px;
+      max-width: 504px;
+
+      .button {
+        width: inherit;
+        border: 1px solid #DFE5EC;
+      }
+      .fast {
+        border-bottom: none;
+        border-top: none;
+      }
+
+      .optimum {
+        border-bottom-right-radius: 8px;
+        border-bottom-left-radius: 8px;
+        border-top-right-radius: 0;
+      }
+
+      .cheap {
+        border-bottom-left-radius: 0;
+        border-top-left-radius: 8px;
+        border-top-right-radius: 8px;
+      }
+    }
+    .show-more {
+      margin-right: 21px;
+    }
+    .ticket-list {
+      margin-right: 21px;
+    }
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+

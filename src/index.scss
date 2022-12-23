@@ -3,17 +3,17 @@
 @font-face {
     font-family: 'Open Sans';
 }
-.page {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    margin: auto;
-}
 body {
-    font: 14px Open Sans sans-serif;
+    font: 14px Open Sans;
     line-height: 1.4em;
     background: #FFFFFF;
     color: #111111;
     margin: 0 auto;
     padding: 0;
+    .page {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        margin: auto;
+    }
 }

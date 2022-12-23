@@ -1,5 +1,5 @@
 import React, { useEffect, useMemo, useState } from 'react'
-import './TicketList.css'
+import './TicketList.scss'
 import { useDispatch, useSelector } from 'react-redux'
 import { v4 as uuidv4 } from 'uuid'
 import classnames from 'classnames'
@@ -82,11 +82,7 @@ const TicketList = () => {
         )}
       </ul>
       {!loading && filterAndSortTickets.length !== 0 && (
-        <button
-          type='button'
-          className='button show-more'
-          onClick={() => setTicketNum((prevTicketNum) => prevTicketNum + 5)}
-        >
+        <button type='button' className='show-more' onClick={() => setTicketNum((prevTicketNum) => prevTicketNum + 5)}>
           ПОКАЗАТЬ ЕЩЕ 5 БИЛЕТОВ!
         </button>
       )}
