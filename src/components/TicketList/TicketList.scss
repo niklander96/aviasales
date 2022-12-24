@@ -2,6 +2,8 @@
   box-sizing: border-box;
   padding: 0;
   border-radius: 5px;
+  display: flex;
+  flex-direction: column;
 
   .search-ticket-buttons {
     margin: 0 0 10px 21px;
@@ -50,11 +52,11 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-
   }
 
   .show-more {
     cursor: url("../img/Cursor.svg"), auto;
+    padding: 0;
     border-radius: 8px;
     width: 100%;
     max-width: 504px;
@@ -81,15 +83,17 @@
 
 @media (max-width: 800px) {
   .search-ticket {
+    display: flex;
+    flex-direction: column;
+    align-self: center;
     width: 100%;
-    min-width: 350px;
+    margin: 0;
+    padding-right: 20px;
     .search-ticket-buttons {
       display: flex;
       flex-direction: column;
       align-content: center;
-      margin-right: 21px;
       max-width: 504px;
-
       .button {
         width: inherit;
         border: 1px solid #DFE5EC;
@@ -98,7 +102,6 @@
         border-bottom: none;
         border-top: none;
       }
-
       .optimum {
         border-bottom-right-radius: 8px;
         border-bottom-left-radius: 8px;
@@ -112,11 +115,10 @@
       }
     }
     .show-more {
+      width: 95%;
       margin-right: 21px;
     }
-    .ticket-list {
-      margin-right: 21px;
-    }
+
   }
 }
 

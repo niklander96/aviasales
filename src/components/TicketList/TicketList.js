@@ -31,61 +31,67 @@ const TicketList = () => {
   }, [])
 
   return (
-    <div className='search-ticket'>
-      <div className='search-ticket-buttons'>
-        <button
-          type='button'
-          className={classnames('button', 'cheap', activeButtons === 'cheap' && 'selected')}
-          onClick={() => {
-            setActiveButtons('cheap')
-            dispatch(sortCheap())
-          }}
-        >
-          САМЫЙ ДЕШЕЫВЫЙ
-        </button>
-        <button
-          type='button'
-          className={classnames('button', 'fast', activeButtons === 'fast' && 'selected')}
-          onClick={() => {
-            setActiveButtons('fast')
-            dispatch(sortFast())
-          }}
-        >
-          САМЫЙ БЫСТРЫЙ
-        </button>
-        <button
-          type='button'
-          className={classnames('button', 'optimum', activeButtons === 'optimum' && 'selected')}
-          onClick={() => {
-            setActiveButtons('optimum')
-            dispatch(sortOptimum())
-          }}
-        >
-          ОПТИМАЛЬНЫЙ
-        </button>
-      </div>
-      <ul className='ticket-list'>
-        {loading && <Spin size='large' />}
-        {!loading && filterAndSortTickets.length === 0 ? (
-          <h2>Билетов не найдено</h2>
-        ) : (
-          packTickets.map((item) => (
-            <Ticket
-              key={uuidv4()}
-              item={item}
-              price={item.price}
-              idImg={item.carrier}
-              before={item.segments[0]}
-              after={item.segments[1]}
-            />
-          ))
+    <div>
+      <div className='search-ticket'>
+        <div className='search-ticket-buttons'>
+          <button
+            type='button'
+            className={classnames('button', 'cheap', activeButtons === 'cheap' && 'selected')}
+            onClick={() => {
+              setActiveButtons('cheap')
+              dispatch(sortCheap())
+            }}
+          >
+            САМЫЙ ДЕШЕЫВЫЙ
+          </button>
+          <button
+            type='button'
+            className={classnames('button', 'fast', activeButtons === 'fast' && 'selected')}
+            onClick={() => {
+              setActiveButtons('fast')
+              dispatch(sortFast())
+            }}
+          >
+            САМЫЙ БЫСТРЫЙ
+          </button>
+          <button
+            type='button'
+            className={classnames('button', 'optimum', activeButtons === 'optimum' && 'selected')}
+            onClick={() => {
+              setActiveButtons('optimum')
+              dispatch(sortOptimum())
+            }}
+          >
+            ОПТИМАЛЬНЫЙ
+          </button>
+        </div>
+        <ul className='ticket-list'>
+          {loading && <Spin size='large' />}
+          {!loading && filterAndSortTickets.length === 0 ? (
+            <h2>Билетов не найдено</h2>
+          ) : (
+            packTickets.map((item) => (
+              <Ticket
+                key={uuidv4()}
+                item={item}
+                price={item.price}
+                idImg={item.carrier}
+                before={item.segments[0]}
+                after={item.segments[1]}
+              />
+            ))
+          )}
+        </ul>
+        {!loading && filterAndSortTickets.length !== 0 && (
+          <button
+            type='button'
+            className='show-more'
+            onClick={() => setTicketNum((prevTicketNum) => prevTicketNum + 5)}
+          >
+            ПОКАЗАТЬ ЕЩЕ 5 БИЛЕТОВ!
+          </button>
         )}
-      </ul>
-      {!loading && filterAndSortTickets.length !== 0 && (
-        <button type='button' className='show-more' onClick={() => setTicketNum((prevTicketNum) => prevTicketNum + 5)}>
-          ПОКАЗАТЬ ЕЩЕ 5 БИЛЕТОВ!
-        </button>
-      )}
+      </div>
     </div>
   )
 }
