@@ -2,7 +2,7 @@ import './App.scss'
 
 import TicketList from '../TicketList'
 import Filter from '../Filter'
-import Logo from '../img/Logo.svg'
+import Logo from '../../img/Logo.svg'
 
 function App() {
   return (

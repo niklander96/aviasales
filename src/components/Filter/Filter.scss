@@ -43,14 +43,14 @@
         position: absolute;
         width: 20px;
         height: 20px;
-        background-image: url("../img/off.svg");
+        background-image: url("../../img/off.svg");
         margin-left: -2em;
         margin-bottom: 20px;
     }
 
     .check {
         padding-left: 2em;
-        cursor: url("../img/Cursor.svg"), auto;
+        cursor: url("../../img/Cursor.svg"), auto;
     }
 
     .inputs-item:hover {
@@ -58,7 +58,7 @@
 
     }
     .input:checked + .checkbox {
-        background-image: url('../img/on.svg');
+        background-image: url('../../img/on.svg');
         background-position: center;
     }
 }
