@@ -1,4 +1,4 @@
-import { applyMiddleware, combineReducers, legacy_createStore as createStore, compose } from '@reduxjs/toolkit'
+import { applyMiddleware, combineReducers, legacy_createStore as createStore, compose } from 'redux'
 import thunk from 'redux-thunk'
 
 import { ticketsReducer } from './ticketsReducer'
