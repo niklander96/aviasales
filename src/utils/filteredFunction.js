@@ -3,7 +3,8 @@ const filtering = (items, allChecked, noChecked, oneChecked, twoChecked, threeCh
     const stopsBefore = ticket.segments[0].stops.length
     const stopsAfter = ticket.segments[1].stops.length
 
-    const matchedStops = (checkedProp, stops) => checkedProp && stopsBefore === stops && stopsAfter === stops
+    const matchedStops = (checkedProp, stopsNumber) =>
+      checkedProp && stopsBefore === stopsNumber && stopsAfter === stopsNumber
 
     if (
       allChecked ||

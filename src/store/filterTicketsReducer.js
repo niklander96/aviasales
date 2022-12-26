@@ -30,7 +30,8 @@ function filterTicketsReducer(state = initialState, action) {
         threeChecked: false,
       }
     }
-    const { ...stateWithNoStop } = changePropState
+    // eslint-disable-next-line no-unused-vars
+    const { allChecked, ...stateWithNoStop } = changePropState
     let allPropChecked = true
 
     Object.values(stateWithNoStop).forEach((check) => {

@@ -16,6 +16,7 @@ const Filter = () => {
           <li className='inputs-item'>
             <label className='check'>
               <input
+                id='all'
                 className='input all'
                 type='checkbox'
                 checked={filters.allChecked}
@@ -28,6 +29,7 @@ const Filter = () => {
           <li className='inputs-item'>
             <label className='check'>
               <input
+                id='zero'
                 className='input zero'
                 type='checkbox'
                 checked={filters.noChecked}
@@ -40,6 +42,7 @@ const Filter = () => {
           <li className='inputs-item'>
             <label className='check'>
               <input
+                id='one'
                 className='input one'
                 type='checkbox'
                 checked={filters.oneChecked}
@@ -51,6 +54,7 @@ const Filter = () => {
           <li className='inputs-item'>
             <label className='check'>
               <input
+                id='two'
                 className='input two'
                 type='checkbox'
                 checked={filters.twoChecked}
@@ -62,6 +66,7 @@ const Filter = () => {
           <li className='inputs-item'>
             <label className='check'>
               <input
+                id='three'
                 className='input three'
                 type='checkbox'
                 checked={filters.threeChecked}

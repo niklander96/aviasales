@@ -28,7 +28,7 @@ const TicketList = () => {
   useEffect(() => {
     dispatch(fetchTickets())
   }, [])
-
+  console.log(allTickets)
   return (
     <div>
       <div className='search-ticket'>
@@ -71,8 +71,7 @@ const TicketList = () => {
           ) : (
             packTickets.map((item) => (
               <Ticket
-                key={`${item.carrier} ${item.price} ${item.segments[0].date} ${item.segments[1].date}`}
-                item={item}
+                key={`${item.carrier}.${item.price}.${item.segments[0].date}.${item.segments[1].date}.${item.segments[0].duration}.${item.segments[1].duration}`}
                 price={item.price}
                 idImg={item.carrier}
                 before={item.segments[0]}
