@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { timeStart, timeFlight, timeEnd } from '../../functions/getTransformTime'
+import { timeStart, timeFlight, timeEnd } from '../../utils/getTransformTime'
 
 import styles from './Ticket.module.scss'
 

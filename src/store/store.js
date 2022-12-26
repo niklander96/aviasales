@@ -1,14 +1,8 @@
-import { applyMiddleware, combineReducers, legacy_createStore as createStore, compose } from 'redux'
+import { applyMiddleware, legacy_createStore as createStore, compose } from 'redux'
 import thunk from 'redux-thunk'
 
-import { ticketsReducer } from './ticketsReducer'
-import sortTicketsReducer from './sortTicketsReducer'
-import filterTicketsReducer from './filterTicketsReducer'
+import rootReducer from './rootReducer'
 
-const rootReducer = combineReducers({
-  tickets: ticketsReducer,
-  sort: sortTicketsReducer,
-  filterStops: filterTicketsReducer,
-})
+const composeEnhancer = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose
 
-export const store = createStore(rootReducer, compose(applyMiddleware(thunk)))
+export const store = createStore(rootReducer, composeEnhancer(applyMiddleware(thunk)))

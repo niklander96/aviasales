@@ -1,15 +1,14 @@
 import React, { useEffect, useMemo, useState } from 'react'
 import './TicketList.scss'
 import { useDispatch, useSelector } from 'react-redux'
-import { v4 as uuidv4 } from 'uuid'
 import classnames from 'classnames'
 import { Spin } from 'antd'
 
-import sortingTickets from '../../functions/sortedFunction'
+import sortingTickets from '../../utils/sortedFunction'
 import { sortCheap, sortFast, sortOptimum } from '../../store/sortTicketsReducer'
 import Ticket from '../Ticket'
 import { fetchTickets } from '../../services/TicketService'
-import filtering from '../../functions/filteredFunction'
+import filtering from '../../utils/filteredFunction'
 
 const TicketList = () => {
   const dispatch = useDispatch()
@@ -72,7 +71,7 @@ const TicketList = () => {
           ) : (
             packTickets.map((item) => (
               <Ticket
-                key={uuidv4()}
+                key={`${item.carrier} ${item.price} ${item.segments[0].date} ${item.segments[1].date}`}
                 item={item}
                 price={item.price}
                 idImg={item.carrier}
