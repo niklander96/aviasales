@@ -1,4 +1,4 @@
-.aviaSales-filter {
+.aviaSalesFilter {
     box-sizing: border-box;
     background: #FFFFFF;
     border: 0;
@@ -17,7 +17,7 @@
         line-height: 20px;
     }
 
-    .filters-head {
+    .filtersHead {
         font-style: normal;
         font-weight: 600;
         font-size: 12px;
@@ -31,7 +31,7 @@
         -moz-appearance: none;
     }
 
-    .inputs-item {
+    .inputsItem {
         display: flex;
         padding-top: 10px;
         padding-left: 20px;
@@ -53,7 +53,7 @@
         cursor: url("../../img/Cursor.svg"), auto;
     }
 
-    .inputs-item:hover {
+    .inputsItem:hover {
         background: #F1FCFF;
 
     }
@@ -64,7 +64,7 @@
 }
 
 @media (max-width: 800px) {
-    .aviaSales-filter {
+    .aviaSalesFilter {
         display: flex;
         flex-wrap: wrap;
         align-self: center;

@@ -1,5 +1,4 @@
 import React, { useEffect, useMemo, useState } from 'react'
-import './TicketList.scss'
 import { useDispatch, useSelector } from 'react-redux'
 import classnames from 'classnames'
 import { Spin } from 'antd'
@@ -9,6 +8,8 @@ import { sortCheap, sortFast, sortOptimum } from '../../store/sortTicketsReducer
 import Ticket from '../Ticket'
 import { fetchTickets } from '../../services/TicketService'
 import filtering from '../../utils/filteredFunction'
+
+import styles from './TicketList.module.scss'
 
 const TicketList = () => {
   const dispatch = useDispatch()
@@ -28,14 +29,13 @@ const TicketList = () => {
   useEffect(() => {
     dispatch(fetchTickets())
   }, [])
-  console.log(allTickets)
   return (
     <div>
-      <div className='search-ticket'>
-        <div className='search-ticket-buttons'>
+      <div className={styles.searchTicket}>
+        <div className={styles.searchTicketButtons}>
           <button
             type='button'
-            className={classnames('button', 'cheap', activeButtons === 'cheap' && 'selected')}
+            className={classnames(styles.button, styles.cheap, activeButtons === 'cheap' && styles.selected)}
             onClick={() => {
               setActiveButtons('cheap')
               dispatch(sortCheap())
@@ -45,7 +45,7 @@ const TicketList = () => {
           </button>
           <button
             type='button'
-            className={classnames('button', 'fast', activeButtons === 'fast' && 'selected')}
+            className={classnames(styles.button, styles.fast, activeButtons === 'fast' && styles.selected)}
             onClick={() => {
               setActiveButtons('fast')
               dispatch(sortFast())
@@ -55,7 +55,7 @@ const TicketList = () => {
           </button>
           <button
             type='button'
-            className={classnames('button', 'optimum', activeButtons === 'optimum' && 'selected')}
+            className={classnames(styles.button, styles.optimum, activeButtons === 'optimum' && styles.selected)}
             onClick={() => {
               setActiveButtons('optimum')
               dispatch(sortOptimum())
@@ -64,7 +64,7 @@ const TicketList = () => {
             ОПТИМАЛЬНЫЙ
           </button>
         </div>
-        <ul className='ticket-list'>
+        <ul className={styles.ticketList}>
           {loading && <Spin size='large' />}
           {!loading && filterAndSortTickets.length === 0 ? (
             <h2>Билетов не найдено</h2>
@@ -83,7 +83,7 @@ const TicketList = () => {
         {!loading && filterAndSortTickets.length !== 0 && (
           <button
             type='button'
-            className='show-more'
+            className={styles.showMore}
             onClick={() => setTicketNum((prevTicketNum) => prevTicketNum + 5)}
           >
             ПОКАЗАТЬ ЕЩЕ 5 БИЛЕТОВ!
