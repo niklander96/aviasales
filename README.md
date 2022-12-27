@@ -1,1 +1,1 @@
-https://aviasales-niklander96.vercel.app/
+https://aviasales-test-niklander96.vercel.app/
