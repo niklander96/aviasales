@@ -23,12 +23,15 @@ const TicketList = () => {
 
   const sortedTickets = useMemo(() => sortingTickets(allTickets, sorts), [sorts, allTickets])
 
-  const filterAndSortTickets = filtering(sortedTickets, allChecked, noChecked, oneChecked, twoChecked, threeChecked)
+  const filterAndSortTickets = useMemo(() =>
+    filtering(sortedTickets, allChecked, noChecked, oneChecked, twoChecked, threeChecked),
+  )
   const packTickets = filterAndSortTickets.slice(0, ticketNum)
 
   useEffect(() => {
     dispatch(fetchTickets())
   }, [])
+
   return (
     <div>
       <div className={styles.searchTicket}>
