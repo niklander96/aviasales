@@ -17,7 +17,6 @@ export function fetchTickets() {
 
     let newUrlTickets = new URL('tickets', apiBase)
     newUrlTickets.searchParams.set('searchId', searchIdent)
-    let firstPackOfTickets = false
     let notLastPackOfTickets = true
     try {
       while (notLastPackOfTickets) {
@@ -28,15 +27,9 @@ export function fetchTickets() {
 
         const { tickets, stop } = await ticketsRes.json()
 
-        if (!firstPackOfTickets) {
-          firstPackOfTickets = true
-          dispatch(getFirstTickets(tickets))
-        }
-        if (stop) {
-          notLastPackOfTickets = false
-          dispatch(getAllTickets(tickets))
-        }
-        if (!ticketsRes.ok) throw new Error('Failed to searched tickets')
+        dispatch(getAllTickets(tickets))
+
+        if (stop) notLastPackOfTickets = false
       }
     } catch (e) {
       alert(e.message)
