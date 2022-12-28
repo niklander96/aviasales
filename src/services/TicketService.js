@@ -1,4 +1,4 @@
-import { getAllTickets, getFirstTickets } from '../store/ticketsReducer'
+import { getAllTickets } from '../store/ticketsReducer'
 
 const apiBase = 'https://aviasales-test-api.kata.academy/'
 
